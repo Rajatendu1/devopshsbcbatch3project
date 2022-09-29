@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <style>
+      span {
+        color: red;
+      }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="UserDetails.js"></script>
+    <title>User Form</title>
+  </head>
+
+  <body>
+    <div
+      class="border border-primary container-sm"
+      style="margin-top: 3%; max-width: 35%"
+    >
+      <br />
+      <form onsubmit="validate()" action="controller" method="post" style="margin-left: 15%">
+        <div class="row mb-3">
+          <label for="name" class="col-sm-3 col-form-label">Name *</label>
+          <div class="col-sm-7">
+            <input type="text" class="form-control" name="uname" id="uname" />
+            <span id="s1"></span>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label for="city" class="col-sm-3 col-form-label">City *</label>
+          <div class="col-sm-7">
+            <input type="text" class="form-control" name="city" id="city" />
+            <span id="s2"></span>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label for="distance" class="col-sm-3 col-form-label"
+            >Distance in kms *</label
+          >
+          <div class="col-sm-7">
+            <input  type="text" class="form-control" name="distance" id="distance" />
+            <span id="s3"></span>
+            <!-- <div id="distanceHelpBlock" class="form-text">
+                Number should be between 10 to 50
+              </div> -->
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label for="Summary" class="col-sm-3 col-form-label">Summary</label>
+          <div class="col-sm-7">
+            <input type="text" disabled class="form-control"  name="Summary" id="Summary" />
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+        &nbsp; &nbsp;
+        <button type="button" onclick="getData()" class="btn btn-primary">
+          Load directly from JSON
+        </button>
+        <br>
+        <button type="button" onclick="getDatafromservlet()" class="btn btn-primary">
+          Load from servlet
+        </button>
+        <br /><br />
+      </form>
+    </div>
+    <br />
+    <div class="container-sm" style="max-width: 35%">
+      <table id="t1" class="table table-bordered" border="1">
+      </table>
+    </div>
+  </body>
+</html>
